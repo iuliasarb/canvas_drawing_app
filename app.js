@@ -2,15 +2,36 @@ var canvas = document.getElementById('canvas');
 var context = canvas.getContext('2d');
 
 var radius = 10;
+var dragging = false;
 
 canvas.width = window.innerWidth;   //takes the window size
 canvas.height = window.innerHeight;
 
+context.lineWidth = radius*2;
+
 var putPoint = function(e) {
-	context.beginPath();
-	context.arc(e.offsetX, e.offsetY, radius, 0, Math.PI*2);
-	context.fillStyle = '#447799';
-	context.fill();
+	if(dragging){
+		context.lineTo(e.clientX, e.clientY);
+		context.stroke();
+		context.beginPath();
+		context.arc(e.clientX, e.clientY, radius, 0, Math.PI*2);
+		context.fillStyle = '#000';
+		context.fill();
+		context.beginPath();
+		context.moveTo(e.clientX, e.clientY);
+	}
 };
 
-canvas.addEventListener('mousedown', putPoint);
+var engage = function(e){
+	dragging = true;
+	putPoint(e);
+}
+var disengage = function(){
+	dragging = false;
+	context.beginPath();
+}
+
+
+canvas.addEventListener('mousedown', engage);
+canvas.addEventListener('mousemove', putPoint);
+canvas.addEventListener('mouseup', disengage);
