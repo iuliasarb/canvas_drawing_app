@@ -1,0 +1,29 @@
+*{
+	box-sizing: border-box; /* adds padding and border on the inside */
+	-moz-box-sizing: border-box;
+	font-family: sans-serif;
+
+	user-select: none; /* you can't select anything in the entire document */
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}
+
+#toolbar {
+	width: 100%;
+	height: 50px;
+	padding: 10px;
+	position: fixed; /* added this so that you don't draw lower than the mouse since canvas=window */
+	top: 0;
+	background-color: #2f2f2f;
+	color: white;
+}
+
+.radcontrol {
+	width: 30px;
+	height:30px;
+	background-color: #4f4f4f;
+	display: inline-block;
+	text-align: center;
+	padding: 5px;
+}
