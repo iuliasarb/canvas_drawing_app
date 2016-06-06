@@ -14,7 +14,7 @@ function saveImage(){
 	var image = canvas.toDataURL();
 
 	var aLink = document.createElement('a');
-	var evt = document.createEvent("HTMLEvents");
+	var evt = document.createEvent('HTMLEvents');
 	evt.initEvent('click');
 	aLink.download = 'image.png';
 	aLink.href = image;

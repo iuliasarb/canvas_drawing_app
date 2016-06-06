@@ -68,3 +68,16 @@
 #save:hover {
 	background-color: #818181;
 }
+
+#clear {
+	float: right;
+	margin-right: 20px;
+	height: 30px;
+	border-radius: 10px;
+	padding: 8px;
+	background-color: #434343;
+}
+
+#clear:hover {
+	background-color: #818181;
+}
