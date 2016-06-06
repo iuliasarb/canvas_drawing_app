@@ -11,13 +11,12 @@ context.lineWidth = radius*2;
 
 var putPoint = function(e) {
 	if(dragging){
-		context.lineTo(e.clientX, e.clientY);
+		context.lineTo(e.clientX, e.clientY); 
 		context.stroke();
 		context.beginPath();
 		context.arc(e.clientX, e.clientY, radius, 0, Math.PI*2);
-		context.fillStyle = '#000';
 		context.fill();
-		context.beginPath();
+		context.beginPath(); // leaves the beginning of the line open
 		context.moveTo(e.clientX, e.clientY);
 	}
 };
@@ -28,7 +27,7 @@ var engage = function(e){
 }
 var disengage = function(){
 	dragging = false;
-	context.beginPath();
+	context.beginPath(); //ends the open line
 }
 
 

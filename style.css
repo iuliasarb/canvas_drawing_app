@@ -21,9 +21,37 @@
 
 .radcontrol {
 	width: 30px;
-	height:30px;
-	background-color: #4f4f4f;
+	height: 30px;
+	border-radius: 10px;
+	background-color: grey;
+	box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.5), 0px 2px 2px rgba(0, 0, 0, 0.5);
 	display: inline-block;
 	text-align: center;
 	padding: 5px;
+}
+#rad:hover {
+	cursor: default;
+}
+#radval {
+	margin-right: 10px;
+}
+
+#rad {
+	float: left;
+}
+#colors {
+	float: right;
+}
+.swatch {
+	width: 30px;
+	height: 30px;
+	border-radius: 10px;
+	box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.5), 0px 2px 2px rgba(0, 0, 0, 0.5); /* nice shadow effect */
+	display: inline-block;
+	margin-left: 10px;
+}
+
+.swatch.active {
+	border: 2px solid lightgrey;
+	box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.5);
 }
